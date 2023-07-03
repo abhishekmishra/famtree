@@ -1,0 +1,17 @@
+Person 1,Relation (1 of 2),Person 2
+Shantanu,Husband,Ganga
+Shantanu,Husband,Satyavati
+Shantanu,Father,Bhishma
+Ganga,Mother,Bhishma
+Shantanu,Father,Chitrangada
+Shantanu,Father,Vichitravirya
+Satyavati,Mother,Chitrangada
+Satyavati,Mother,Vichitravirya
+Vichitravirya,Husband,Ambika
+Vichitravirya,Husband,Ambalika
+Vichitravirya,Father,Dhritarashtra
+Vichitravirya,Father,Pandu
+Ambika,Mother,Dhritarashtra
+Ambalika,Mother,Pandu
+Dhritarashtra,Father,The Kauravas
+Pandu,Father,The Pandavas
