@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<div id="container"></div>
+<script src="js/d3.v7.min.js"></script>
+<script type="module">
+
+    const dataReq = new Request("/test/data/relations0.csv");
+
+    fetch(dataReq)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            return response.blob();
+        })
+        .then((response) => {
+            response.text().then(val => {
+                console.log(val);
+                console.log(d3.csvParse(val));
+            });
+        });
+</script>
