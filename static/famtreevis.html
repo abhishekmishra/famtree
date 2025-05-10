@@ -1,0 +1,54 @@
+<script
+  type="text/javascript"
+  src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+></script>
+<div
+  id="mynetwork"
+  style="width: 600px; height: 400px; border: 1px solid #ccc"
+></div>
+<script>
+  const nodes = new vis.DataSet([
+    { id: "p1", label: "Alice" },
+    { id: "p2", label: "Bob" },
+    { id: "p3", label: "Charlie" },
+  ]);
+
+  const edges = new vis.DataSet([
+    { from: "p1", to: "p2", label: "wife" },
+    { from: "p2", to: "p1", label: "husband" },
+    { from: "p1", to: "p3", label: "mother" },
+    { from: "p2", to: "p3", label: "father" },
+  ]);
+
+  const container = document.getElementById("mynetwork");
+  const data = { nodes, edges };
+  const options = {
+    autoResize: true,
+    height: "100%",
+    width: "100%",
+    edges: {
+      arrows: { to: { enabled: true } },
+      smooth: true,
+    },
+    layout: {
+      improvedLayout: true,
+      hierarchical: {
+        enabled: false,
+        levelSeparation: 150,
+        nodeSpacing: 100,
+        treeSpacing: 200,
+        blockShifting: true,
+        edgeMinimization: true,
+        parentCentralization: true,
+        direction: "UD", // UD, DU, LR, RL
+        sortMethod: "hubsize", // hubsize, directed
+        shakeTowards: "leaves", // roots, leaves
+      },
+    },
+    physics: {
+      enabled: true,
+    },
+  };
+
+  new vis.Network(container, data, options);
+</script>
